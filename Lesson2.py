@@ -1,4 +1,5 @@
 
+
 import pygame
 import random
 #-----------------Create a circle at X,Y--------------------------------------------------------
@@ -31,7 +32,7 @@ for i in range(1000000):
   pygame.event.get()
   
   x,y = pygame.mouse.get_pos() # Get position of the mouse
-  pygame.Surface.fill(screen,(0,0,0))
+  pygame.Surface.fill(screen,(0,255,0))
   
   drawcircle(circle)
   pygame.display.update()
