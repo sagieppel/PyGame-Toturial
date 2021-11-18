@@ -14,7 +14,8 @@ def createcircle(x,y):
 #------------------Draw a circle--------------------------------------------------------
 def drawcircle(circle):
     #circle["size"]=circle["size"]+0.1
-    circle["x"]=circle["x"]+0.1
+    
+    circle["x"] = circle["x"]+0.1
     pygame.draw.circle(screen, [circle["red"],circle["green"],circle["blue"]], [int(circle["x"]),circle["y"]], int(circle["size"]))
 
 
@@ -30,6 +31,7 @@ for i in range(1000000):
   pygame.event.get()
   
   x,y = pygame.mouse.get_pos() # Get position of the mouse
+  pygame.Surface.fill(screen,(0,0,0))
   
   drawcircle(circle)
   pygame.display.update()
