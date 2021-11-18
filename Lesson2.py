@@ -1,8 +1,8 @@
 import pygame 
 import random
 
-#-----------------Draw a circle at X,Y--------------------------------------------------------
-def drawcircle(x,y):
+#-----------------Create a circle at X,Y--------------------------------------------------------
+def createcircle(x,y):
     circle={}
     circle["red"]=random.randint(0,255)
     circle["green"]=random.randint(0,255)
@@ -10,8 +10,13 @@ def drawcircle(x,y):
     circle["x"]=x #random.randint(0,255)
     circle["y"]=y #random.randint(0,255) 
     circle["size"]=random.randint(1,30)
-    pygame.draw.circle(screen, [circle["red"],circle["green"],circle["blue"]], [circle["x"],circle["y"]], circle["size"])
-#--------------------------------------------------------------------------
+    return circle
+#------------------Draw a  circle--------------------------------------------------------
+def drawcircle(circle):  
+   pygame.draw.circle(screen, [circle["red"],circle["green"],circle["blue"]], [circle["x"],circle["y"]], circle["size"])
+
+
+
 
 pygame.init()
 
