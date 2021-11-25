@@ -22,9 +22,10 @@ screen=pygame.display.set_mode([screensize,screensize]) # Set screen
 circle=createcircle(100,100)
 
 #----------------------------Main loop--------------------------------------------------------------------
-for i in range(1000000):
-  #pygame.event.get()
+for i in range(10000000):
+  #pygame.event.get() # Get user input
   #x,y = pygame.mouse.get_pos() # Get position of the mouse
-  pygame.Surface.fill(screen,(0,255,0))
+  pygame.Surface.fill(screen,(0,0,0)) # Fill screen
   drawcircle(circle)
+  pygame.time.delay(10) # Wait 10 milli second
   pygame.display.update()
