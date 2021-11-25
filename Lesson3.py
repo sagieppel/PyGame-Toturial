@@ -9,15 +9,15 @@ def createcircle(x,y):
   circle["x"]=x
   circle["y"]=y 
   circle["size"]=random.randint(1,30)
-  circle["speedx"]=3
-  circle["speedy"]=-5
+  circle["speedx"]=0
+  circle["speedy"]=-0
   circle["gravity"]=0.1
   return circle
 #------------------Draw a circle--------------------------------------------------------
 def updatecircle(circle):
     circle["x"] += circle ["speedx"]
     circle["y"] += circle ["speedy"]
-    circle["speedy"]+= circle["gravity"]
+    circle ["speedy"]+= circle["gravity"]
     pygame.draw.circle(screen, [circle["red"],circle["green"],circle["blue"]], [int(circle["x"]),int(circle["y"])], int(circle["size"]))
 
 #----------------initiate pygame---------------------------------------------------------    
@@ -25,8 +25,11 @@ pygame.init()
 screensize=700
 screen=pygame.display.set_mode([screensize,screensize]) # Set screen
 
-circle=createcircle(300,300)
-
+list=[]
+for i in range(100):
+  circle=createcircle(300,300)
+  
+  
 #----------------------------Main loop--------------------------------------------------------------------
 for i in range(10000000):
   #pygame.event.get() # Get user input
