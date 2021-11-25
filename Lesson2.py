@@ -12,8 +12,6 @@ def createcircle(x,y):
   return circle
 #------------------Draw a circle--------------------------------------------------------
 def drawcircle(circle):
-    #circle["size"]=circle["size"]+0.1
-    circle["x"] = circle["x"]+0.1
     pygame.draw.circle(screen, [circle["red"],circle["green"],circle["blue"]], [int(circle["x"]),int(circle["y"])], int(circle["size"]))
 #----------------initiate pygame---------------------------------------------------------    
 pygame.init()
