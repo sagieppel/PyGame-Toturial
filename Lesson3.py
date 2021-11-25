@@ -6,8 +6,8 @@ def createcircle(x,y):
   circle["red"]=random.randint(0,255)
   circle["green"]=random.randint(0,255)
   circle["blue"]=random.randint(0,255)
-  circle["x"]=x #random.randint(0,255)
-  circle["y"]=y #random.randint(0,255)
+  circle["x"]=x
+  circle["y"]=y 
   circle["size"]=random.randint(1,30)
   return circle
 #------------------Draw a circle--------------------------------------------------------
