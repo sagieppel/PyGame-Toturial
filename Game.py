@@ -16,9 +16,13 @@ def createcircle(x,y):
   
 #------------------Draw a circle--------------------------------------------------------
 def updatecircle(circle):
-    circle["x"] += circle ["speedx"]+random.randint(-10,10)/10
-    circle["y"] += circle ["speedy"]+random.randint(-10,10)/10
-
+    circle["x"] += circle ["speedx"]#+random.randint(-10,10)/10
+    circle["y"] += circle ["speedy"]#+random.randint(-10,10)/10
+   
+    if  circle["x"]<0 or  circle["x"]>screensize: 
+       circle ["speedx"]*=-1
+    if  circle["y"]<0 or  circle["y"]>screensize: 
+       circle ["speedy"]*=-1
     
     pygame.draw.circle(screen, [circle["red"],circle["green"],circle["blue"]], [int(circle["x"]),int(circle["y"])], int(circle["size"]))
 
@@ -38,10 +42,8 @@ for i in range(10):
 #----------------------------Main loop--------------------------------------------------------------------
 for i in range(10000000):
   pygame.event.get() # Get user input
-  # x,y = pygame.mouse.get_pos() # Get position of the mouse
+  x,y = pygame.mouse.get_pos() # Get position of the mouse
   
-  # circle=createcircle(x,y)
-  # list.append(circle)
   
   pygame.Surface.fill(screen,(0,0,0)) # Fill screen
   
