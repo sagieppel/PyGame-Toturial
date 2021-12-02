@@ -43,11 +43,12 @@ for i in range(10000000):
   
   circle=createcircle(x,y)
   list.append(circle)
+ # del list[0]# Delete oldest ball
   
   pygame.Surface.fill(screen,(0,0,0)) # Fill screen
   
   for circle in list:
       updatecircle(circle) # Update and draw all the circles
   
-  pygame.time.delay(1) # Wait 10 milli second
+  pygame.time.delay(10) # Wait 10 milli second
   pygame.display.update()
