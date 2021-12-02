@@ -11,16 +11,15 @@ def createcircle(x,y):
   circle["size"]=random.randint(1,30)
   circle["speedx"]=random.randint(-10,10)/10
   circle["speedy"]=random.randint(-10,10)/10
-  circle["gravity"]= 0 #0.1
-  circle["shrink"] =  0.99
+
   return circle
   
 #------------------Draw a circle--------------------------------------------------------
 def updatecircle(circle):
     circle["x"] += circle ["speedx"]+random.randint(-10,10)/10
     circle["y"] += circle ["speedy"]+random.randint(-10,10)/10
-    circle ["speedy"]+= circle["gravity"]
-    circle["size"] *= circle["shrink"]
+
+    
     pygame.draw.circle(screen, [circle["red"],circle["green"],circle["blue"]], [int(circle["x"]),int(circle["y"])], int(circle["size"]))
 
 #----------------initiate pygame---------------------------------------------------------    
@@ -31,7 +30,7 @@ screen=pygame.display.set_mode([screensize,screensize]) # Set screen
 #-----------Create list of circles-----------------------------------------------------------------------
 
 list=[]
-for i in range(100):
+for i in range(10):
    circle=createcircle(300,300)
    list.append(circle)
 
@@ -39,10 +38,10 @@ for i in range(100):
 #----------------------------Main loop--------------------------------------------------------------------
 for i in range(10000000):
   pygame.event.get() # Get user input
-  x,y = pygame.mouse.get_pos() # Get position of the mouse
+  # x,y = pygame.mouse.get_pos() # Get position of the mouse
   
-  circle=createcircle(x,y)
-  list.append(circle)
+  # circle=createcircle(x,y)
+  # list.append(circle)
   
   pygame.Surface.fill(screen,(0,0,0)) # Fill screen
   
