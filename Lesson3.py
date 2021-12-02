@@ -9,15 +9,18 @@ def createcircle(x,y):
   circle["x"]=x
   circle["y"]=y 
   circle["size"]=random.randint(1,30)
-  circle["speedx"]=random.randint(-10,10)
-  circle["speedy"]=random.randint(-10,0)
-  circle["gravity"]=0.0
+  circle["speedx"]=random.randint(-10,10)/10
+  circle["speedy"]=random.randint(-10,10)/10
+  circle["gravity"]= 0 #0.1
+  circle["shrink"] =  0.99
   return circle
+  
 #------------------Draw a circle--------------------------------------------------------
 def updatecircle(circle):
-    circle["x"] += circle ["speedx"]#+random.randint(-10,10)
-    circle["y"] += circle ["speedy"]#+random.randint(-10,10)
+    circle["x"] += circle ["speedx"]+random.randint(-10,10)/10
+    circle["y"] += circle ["speedy"]+random.randint(-10,10)/10
     circle ["speedy"]+= circle["gravity"]
+    circle["size"] *= circle["shrink"]
     pygame.draw.circle(screen, [circle["red"],circle["green"],circle["blue"]], [int(circle["x"]),int(circle["y"])], int(circle["size"]))
 
 #----------------initiate pygame---------------------------------------------------------    
@@ -46,5 +49,5 @@ for i in range(10000000):
   for circle in list:
       updatecircle(circle) # Update and draw all the circles
   
-  pygame.time.delay(10) # Wait 10 milli second
+  pygame.time.delay(1) # Wait 10 milli second
   pygame.display.update()
