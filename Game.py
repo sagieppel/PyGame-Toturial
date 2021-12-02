@@ -8,7 +8,7 @@ def createcircle(x,y):
   circle["blue"]=random.randint(0,255)
   circle["x"]=x
   circle["y"]=y 
-  circle["size"]=random.randint(1,30)
+  circle["size"]=random.randint(29,40)
   circle["speedx"]=random.randint(-10,10)/10
   circle["speedy"]=random.randint(-10,10)/10
 
@@ -21,8 +21,12 @@ def updatecircle(circle):
    
     if  circle["x"]<0 or  circle["x"]>screensize: 
        circle ["speedx"]*=-1
+   
     if  circle["y"]<0 or  circle["y"]>screensize: 
        circle ["speedy"]*=-1
+    
+    if (circle["x"]-x)**2+(circle["y"]-y)**2<circle["size"]**2:
+           circle["size"]=0
     
     pygame.draw.circle(screen, [circle["red"],circle["green"],circle["blue"]], [int(circle["x"]),int(circle["y"])], int(circle["size"]))
 
