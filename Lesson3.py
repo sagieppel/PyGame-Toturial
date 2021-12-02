@@ -25,7 +25,7 @@ pygame.init()
 screensize=700
 screen=pygame.display.set_mode([screensize,screensize]) # Set screen
 
-
+#-----------Create list of circles-----------------------------------------------------------------------
 
 list=[]
 for i in range(100):
@@ -42,7 +42,9 @@ for i in range(10000000):
   list.append(circle)
   
   pygame.Surface.fill(screen,(0,0,0)) # Fill screen
+  
   for circle in list:
-      updatecircle(circle)
+      updatecircle(circle) # Update and draw all the circles
+  
   pygame.time.delay(10) # Wait 10 milli second
   pygame.display.update()
