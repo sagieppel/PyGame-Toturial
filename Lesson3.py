@@ -43,7 +43,7 @@ for i in range(10000000):
   
   circle=createcircle(x,y)
   list.append(circle)
- # del list[0]# Delete oldest ball
+  del list[0]# Delete oldest ball
   
   pygame.Surface.fill(screen,(0,0,0)) # Fill screen
   
